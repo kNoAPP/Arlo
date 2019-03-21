@@ -10,7 +10,7 @@ namespace Arlo {
     public class Multiplyer {
 
         private static readonly int THREADS = Environment.ProcessorCount > 1 ? Environment.ProcessorCount - 1 : 1;
-        private Arlo view;
+        private readonly Arlo view;
         private string _log;
 
         private static Object next = new object();
@@ -95,6 +95,14 @@ namespace Arlo {
 
         public void Stop() {
             IsRunning = false;
+        }
+
+        public void Reset() {
+            Stop();
+            _log = "";
+            LargestPass = new Tuple<int, BigInteger>(0, 0);
+            NextEval = 0;
+            Delay = (int) Math.Pow(2, 5);
         }
 
         private BigInteger SubmitNumber(String toLog) {
