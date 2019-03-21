@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
+using System.Threading;
 
 namespace Arlo {
     public class Multiplyer {
@@ -12,31 +13,41 @@ namespace Arlo {
         private Arlo view;
         private string _log;
 
+        private static Object next = new object();
+        private static Object largest = new object();
+        private static Object log = new object();
+
         public Multiplyer(Arlo a) {
             this.view = a;
             this.IsRunning = false;
             this._log = "";
-            this.LargestPass = new Tuple<int, BigInteger>(1, 0);
+            this.LargestPass = new Tuple<int, BigInteger>(0, 0);
             this.NextEval = 0;
+            this.Delay = (int) Math.Pow(2, 5);
         }
 
         public bool IsRunning { private set; get; }
+        public int Delay { set; get; }
         public BigInteger NextEval { private set; get; }
         public string Log {
             get {
                 string ret = (string) _log.Clone();
-                lock(this) {
+                lock(log)
                     _log = "";
-                }
                 return ret;
             }
         }
 
         public Tuple<int, BigInteger> LargestPass { private set; get; }
 
-        private static Object large = new object();
-        private void RunThread(BigInteger assigned) {
+        private void RunThread() {
+            BigInteger assigned = 0;
             while(IsRunning) {
+                lock(next) {
+                    assigned = NextEval++;
+                    Thread.Sleep(Delay);
+                }   
+
                 StringBuilder sb = new StringBuilder();
                 sb.Append(assigned);
                 sb.Append(Environment.NewLine);
@@ -48,14 +59,14 @@ namespace Arlo {
                     BigInteger newNum = 1;
                     foreach(int i in split)
                         newNum *= i;
-                    sb.Append("  - ");
+                    sb.Append("  * ");
                     sb.Append(newNum);
                     sb.Append(Environment.NewLine);
 
                     split = SplitInts(newNum);
                 }
 
-                lock(large) {
+                lock(largest) {
                     if(passes > LargestPass.Item1 || (passes == LargestPass.Item1 && assigned < LargestPass.Item2))
                         LargestPass = new Tuple<int, BigInteger>(passes, assigned);
                 }
@@ -63,7 +74,8 @@ namespace Arlo {
                 sb.Append("Passes: ");
                 sb.Append(passes);
                 sb.Append(Environment.NewLine + Environment.NewLine);
-                assigned = SubmitNumber(sb.ToString());
+                lock(log)
+                    _log += sb.ToString();
             }
         }
 
@@ -75,13 +87,10 @@ namespace Arlo {
         }
 
         public void Start(BigInteger from) {
-            if(from < 0)
-                from = 0;
-
+            NextEval = from > 0 ? from : 0;
             IsRunning = true;
-            NextEval = from + 0;
             for(int i = 0; i < THREADS; i++)
-                Task.Run(() => RunThread(from + i));
+                Task.Run(() => RunThread());
         }
 
         public void Stop() {
