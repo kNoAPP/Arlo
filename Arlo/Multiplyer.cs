@@ -20,6 +20,7 @@ namespace Arlo {
         public Multiplyer(Arlo a) {
             this.view = a;
             this.IsRunning = false;
+            this.Quick = false;
             this._log = "";
             this.LargestPass = new Tuple<int, BigInteger>(0, 0);
             this.NextEval = 0;
@@ -27,6 +28,7 @@ namespace Arlo {
         }
 
         public bool IsRunning { private set; get; }
+        public bool Quick { set; get; }
         public int Delay { set; get; }
         public BigInteger NextEval { private set; get; }
         public string Log {
@@ -44,8 +46,35 @@ namespace Arlo {
             BigInteger assigned = 0;
             while(IsRunning) {
                 lock(next) {
-                    assigned = NextEval++;
                     Thread.Sleep(Delay);
+                    assigned = NextEval;
+                    if(Quick) {
+                        char[] ca = NextEval.ToString().ToCharArray();
+                        if(ca[0] < '4')
+                            ca[0]++;
+                        else {
+                            ca[0] = '2';
+
+                            int index = ca.Length - 1;
+                            while(true) {
+                                if(index == 0) {
+                                    ca = new char[ca.Length + 1];
+                                    ca[0] = '2';
+                                    for(int i = 1; i < ca.Length; i++)
+                                        ca[i] = '6';
+                                    break;
+                                } else {
+                                    if(ca[index] < '9') {
+                                        char transform = ++ca[index];
+                                        for(int i = index; i < ca.Length; i++)
+                                            ca[i] = transform;
+                                        break;
+                                    } else index--;
+                                }
+                            }
+                        }
+                        NextEval = BigInteger.Parse(new string(ca));
+                    } else NextEval++;
                 }   
 
                 StringBuilder sb = new StringBuilder();
@@ -99,6 +128,7 @@ namespace Arlo {
 
         public void Reset() {
             Stop();
+            this.Quick = false;
             _log = "";
             LargestPass = new Tuple<int, BigInteger>(0, 0);
             NextEval = 0;

@@ -51,10 +51,15 @@ namespace Arlo {
             PassesTextBox.Text = "";
             NumberTextBox.Text = "";
             SpeedBar.Value = 5;
+            QuickBox.Checked = false;
         }
 
         private void SpeedBar_Scroll(object sender, EventArgs e) {
             mult.Delay = (SpeedBar.Value == SpeedBar.Maximum) ? 0 : (int) Math.Pow(2, SpeedBar.Maximum - SpeedBar.Value);
+        }
+
+        private void FastBox_CheckedChanged(object sender, EventArgs e) {
+            mult.Quick = QuickBox.Checked;
         }
     }
 }
