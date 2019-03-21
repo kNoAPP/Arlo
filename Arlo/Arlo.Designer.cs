@@ -41,19 +41,21 @@
             // 
             // Log
             // 
-            this.Log.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Log.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Log.Location = new System.Drawing.Point(12, 12);
             this.Log.Multiline = true;
             this.Log.Name = "Log";
             this.Log.ReadOnly = true;
             this.Log.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Log.Size = new System.Drawing.Size(368, 268);
+            this.Log.Size = new System.Drawing.Size(359, 257);
             this.Log.TabIndex = 0;
             // 
             // StartStop
             // 
-            this.StartStop.Location = new System.Drawing.Point(12, 286);
+            this.StartStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.StartStop.Location = new System.Drawing.Point(12, 275);
             this.StartStop.Name = "StartStop";
             this.StartStop.Size = new System.Drawing.Size(75, 23);
             this.StartStop.TabIndex = 1;
@@ -63,9 +65,11 @@
             // 
             // StartFrom
             // 
-            this.StartFrom.Location = new System.Drawing.Point(93, 289);
+            this.StartFrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StartFrom.Location = new System.Drawing.Point(93, 278);
             this.StartFrom.Name = "StartFrom";
-            this.StartFrom.Size = new System.Drawing.Size(202, 20);
+            this.StartFrom.Size = new System.Drawing.Size(189, 20);
             this.StartFrom.TabIndex = 2;
             this.StartFrom.Text = "Enter a number...";
             // 
@@ -75,7 +79,8 @@
             // 
             // PassesTextBox
             // 
-            this.PassesTextBox.Location = new System.Drawing.Point(16, 393);
+            this.PassesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PassesTextBox.Location = new System.Drawing.Point(16, 382);
             this.PassesTextBox.Name = "PassesTextBox";
             this.PassesTextBox.ReadOnly = true;
             this.PassesTextBox.Size = new System.Drawing.Size(80, 20);
@@ -83,8 +88,9 @@
             // 
             // PassesLabel
             // 
+            this.PassesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PassesLabel.AutoSize = true;
-            this.PassesLabel.Location = new System.Drawing.Point(13, 377);
+            this.PassesLabel.Location = new System.Drawing.Point(13, 366);
             this.PassesLabel.Name = "PassesLabel";
             this.PassesLabel.Size = new System.Drawing.Size(79, 13);
             this.PassesLabel.TabIndex = 4;
@@ -92,8 +98,9 @@
             // 
             // Number
             // 
+            this.Number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Number.AutoSize = true;
-            this.Number.Location = new System.Drawing.Point(102, 377);
+            this.Number.Location = new System.Drawing.Point(102, 366);
             this.Number.Name = "Number";
             this.Number.Size = new System.Drawing.Size(44, 13);
             this.Number.TabIndex = 5;
@@ -101,18 +108,21 @@
             // 
             // NumberTextBox
             // 
-            this.NumberTextBox.Location = new System.Drawing.Point(104, 393);
+            this.NumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NumberTextBox.Location = new System.Drawing.Point(104, 382);
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.ReadOnly = true;
-            this.NumberTextBox.Size = new System.Drawing.Size(276, 20);
+            this.NumberTextBox.Size = new System.Drawing.Size(267, 20);
             this.NumberTextBox.TabIndex = 6;
             // 
             // ResetButton
             // 
-            this.ResetButton.Location = new System.Drawing.Point(300, 286);
-            this.ResetButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ResetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResetButton.Location = new System.Drawing.Point(287, 276);
+            this.ResetButton.Margin = new System.Windows.Forms.Padding(2);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(80, 23);
+            this.ResetButton.Size = new System.Drawing.Size(84, 23);
             this.ResetButton.TabIndex = 7;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
@@ -120,12 +130,12 @@
             // 
             // SpeedBar
             // 
-            this.SpeedBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.SpeedBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SpeedBar.Location = new System.Drawing.Point(6, 329);
-            this.SpeedBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpeedBar.Location = new System.Drawing.Point(6, 318);
+            this.SpeedBar.Margin = new System.Windows.Forms.Padding(2);
             this.SpeedBar.Name = "SpeedBar";
-            this.SpeedBar.Size = new System.Drawing.Size(372, 45);
+            this.SpeedBar.Size = new System.Drawing.Size(363, 45);
             this.SpeedBar.TabIndex = 8;
             this.SpeedBar.TickFrequency = 10;
             this.SpeedBar.Value = 5;
@@ -133,8 +143,9 @@
             // 
             // SpeedLabel
             // 
+            this.SpeedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SpeedLabel.AutoSize = true;
-            this.SpeedLabel.Location = new System.Drawing.Point(174, 352);
+            this.SpeedLabel.Location = new System.Drawing.Point(13, 335);
             this.SpeedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SpeedLabel.Name = "SpeedLabel";
             this.SpeedLabel.Size = new System.Drawing.Size(38, 13);
@@ -143,8 +154,9 @@
             // 
             // QuickBox
             // 
+            this.QuickBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.QuickBox.AutoSize = true;
-            this.QuickBox.Location = new System.Drawing.Point(43, 316);
+            this.QuickBox.Location = new System.Drawing.Point(43, 305);
             this.QuickBox.Name = "QuickBox";
             this.QuickBox.Size = new System.Drawing.Size(91, 17);
             this.QuickBox.TabIndex = 10;
@@ -156,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 417);
+            this.ClientSize = new System.Drawing.Size(383, 418);
             this.Controls.Add(this.QuickBox);
             this.Controls.Add(this.SpeedLabel);
             this.Controls.Add(this.SpeedBar);
@@ -168,7 +180,6 @@
             this.Controls.Add(this.StartFrom);
             this.Controls.Add(this.StartStop);
             this.Controls.Add(this.Log);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Arlo";
             this.Text = "Arlo";
             ((System.ComponentModel.ISupportInitialize)(this.SpeedBar)).EndInit();
