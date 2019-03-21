@@ -1,0 +1,10 @@
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\bin\Debug\Arlo.exe.config
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\bin\Debug\Arlo.exe
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\bin\Debug\Arlo.pdb
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.csprojAssemblyReference.cache
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.Arlo.resources
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.Properties.Resources.resources
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.csproj.GenerateResource.cache
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.csproj.CoreCompileInputs.cache
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.exe
+C:\Users\alldo\Dropbox\2018-2019\Software Practice\Buildspace\Arlo\Arlo\obj\Debug\Arlo.pdb
